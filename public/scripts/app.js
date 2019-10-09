@@ -2,7 +2,7 @@ const renderTweets = function(tweets) {
 // loops through tweets
   for (tweet in tweets) {
     // calls createTweetElement for each tweet
-      $('#tweets').append(createTweetElement(tweets[tweet]));
+      $('#tweets').prepend(createTweetElement(tweets[tweet]));
   }
   // takes return value and appends it to the tweets container
 }
@@ -32,15 +32,22 @@ const createTweetElement = function(tweet) {
   return newElement;
 }
 
+//loads tweet data
+const loadTweets = () => {
+  $.ajax('/tweets')
+  .then((data) => {
+    renderTweets(data);
+  })
+}
+
+//loads newest tweet
+const postNewTweet = () => {
+  $.ajax('/tweets').then((data) => {
+    $('#tweets').prepend(createTweetElement(data[data.length - 1]));
+  });
+};
 
 $(document).ready(function() {
-
-  const loadTweets = () => {
-    $.ajax('/tweets')
-    .then((data) => {
-      renderTweets(data);
-    })
-  }
   loadTweets();
   
   $('form').on('submit', (event) => {
@@ -54,7 +61,7 @@ $(document).ready(function() {
       const data = $('form').serialize();
       $.ajax({ url: '/tweets', method: 'POST', data: data })
       .then(() => {
-  
+        postNewTweet();
       })
     }
 
