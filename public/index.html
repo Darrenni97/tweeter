@@ -24,6 +24,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/moment.js"></script>
   </head>
 
   <body>
@@ -57,11 +58,12 @@
       <section>
         <article class='tweet-container'>
           <header class='tweet-header'>
-            <img href='#'>
-            <span>Name</span>
+            <span><img id='profile-img' src='/images/profile.jpg'>Name</span>
+            <span id='tweet-username'>UserName</span>
           </header>
-          <footer>
-            <span>timestamp</span>
+          <span id='tweet-text'>tweet</span>
+            <footer>
+            <span id='timestamp'>10 days ago</span> 
             <span id='tweet-icons'>
               <i class="fas fa-flag"></i>
               <i class="fas fa-retweet"></i>
