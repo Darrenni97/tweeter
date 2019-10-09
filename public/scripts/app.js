@@ -7,6 +7,12 @@ const renderTweets = function(tweets) {
   // takes return value and appends it to the tweets container
 }
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const createTweetElement = function(tweet) {
   const time = moment(tweet['created_at']).fromNow();
   const newElement = `
@@ -18,7 +24,7 @@ const createTweetElement = function(tweet) {
         </div>
         <span id='tweet-username'>${tweet['user']['handle']}</span>
       </header>
-      <span id='tweet-text'>${tweet['content']['text']}</span>
+      <span id='tweet-text'>${escape(tweet['content']['text'])}</span>
         <footer>
         <span id='timestamp'>${time}</span> 
         <span id='tweet-icons'>
@@ -52,16 +58,20 @@ $(document).ready(function() {
   
   $('form').on('submit', (event) => {
     const inputText = $('#tweettext').val()
-    if (inputText === '') {
+    if (!inputText) {
       alert('Empty Tweet')
     } else if (inputText.length > 140) {
       alert('Too much text')
     } else {
       event.preventDefault()
       const data = $('form').serialize();
-      $.ajax({ url: '/tweets', method: 'POST', data: data })
-      .then(() => {
-        postNewTweet();
+      $.ajax({ 
+        url: '/tweets', 
+        method: 'POST', 
+        data: data, 
+        success: () => {
+          postNewTweet();
+        }
       })
     }
 
