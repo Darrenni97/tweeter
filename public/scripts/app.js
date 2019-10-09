@@ -34,7 +34,7 @@ const createTweetElement = function(tweet) {
 
 
 $(document).ready(function() {
-  
+
   const loadTweets = () => {
     $.ajax('/tweets')
     .then((data) => {
@@ -44,13 +44,20 @@ $(document).ready(function() {
   loadTweets();
   
   $('form').on('submit', (event) => {
-    event.preventDefault()
-    const data = $('form').serialize();
+    const inputText = $('#tweettext').val()
+    if (inputText === '') {
+      alert('Empty Tweet')
+    } else if (inputText.length > 140) {
+      alert('Too much text')
+    } else {
+      event.preventDefault()
+      const data = $('form').serialize();
+      $.ajax({ url: '/tweets', method: 'POST', data: data })
+      .then(() => {
+  
+      })
+    }
 
-    $.ajax({ url: '/tweets', method: 'POST', data: data })
-    .then(() => {
-
-    })
   })
 
 })
