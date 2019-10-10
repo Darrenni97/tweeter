@@ -18,15 +18,6 @@ main input {
  
 .error {
   display: none;
-}
-
-#empty-error {
-  text-align: center;
-  border: 3px solid red;
-  color: red;
-}
-
-#count-error {
   text-align: center;
   border: 3px solid red;
   color: red;
