@@ -6,7 +6,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-![Urls Page](https://github.com/Darrenni97/tinyapp/blob/master/docs/urls-page.png?raw=true)
+![Urls Page](https://github.com/Darrenni97/tweeter/blob/master/screenshots/Screen%20Shot%202019-10-10%20at%204.19.34%20PM.png?raw=true)
+![Urls Page](https://github.com/Darrenni97/tweeter/blob/master/screenshots/Screen%20Shot%202019-10-10%20at%204.20.11%20PM.png?raw=true)
 
 ## Getting Started
 
