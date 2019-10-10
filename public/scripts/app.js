@@ -58,13 +58,13 @@ $(document).ready(function() {
   
   $('form').on('submit', (event) => {
     const inputText = $('#tweettext').val()
+    event.preventDefault()
+    const data = $('form').serialize();
     if (!inputText) {
-      alert('Empty Tweet')
+      $('#empty-error').removeClass('error').slideDown();
     } else if (inputText.length > 140) {
-      alert('Too much text')
+      $('#count-error').removeClass('error').slideDown();
     } else {
-      event.preventDefault()
-      const data = $('form').serialize();
       $.ajax({ 
         url: '/tweets', 
         method: 'POST', 
@@ -73,11 +73,13 @@ $(document).ready(function() {
           postNewTweet();
         }
       })
+      $('#empty-error').addClass('error')
+      $('#count-error').addClass('error')
     }
   })
 
   $('#tweet-toggle').click(() => {
-    $('.new-tweet').toggle();
+    $('#tweet-form').toggle();
   })
 
 })

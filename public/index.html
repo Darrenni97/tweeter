@@ -51,7 +51,19 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <form method='POST' action='/tweets'>
+        <div id='tweet-error'>
+          <div class='error' id='empty-error'>
+            <i class="fas fa-exclamation-triangle"></i>
+            Tweet is empty!
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class='error' id='count-error'>
+            <i class="fas fa-exclamation-triangle"></i>
+            Character count is too high!
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+       </div>
+        <form id='tweet-form' method='POST' action='/tweets'>
           <textarea id='tweettext' name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>

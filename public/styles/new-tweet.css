@@ -15,3 +15,27 @@ main input {
   background-color: #4056A1;
   color: #FFFFFF;
 }
+
+#tweet-form{
+  display: none;
+}
+ 
+.error {
+  display: none;
+}
+
+#empty-error {
+  text-align: center;
+  border: 3px solid red;
+  color: red;
+}
+
+#count-error {
+  text-align: center;
+  border: 3px solid red;
+  color: red;
+}
+
+.error > * {
+  justify-content: center;
+}
