@@ -9,11 +9,13 @@ nav{
   height: 120px;
   display: flex;
   justify-content: space-between;
-  padding: 1.5em
+  padding: 1.5em;
 }
 
 #nav-logo {
   font-family: 'Bungee', cursive;
+  font-size: 45px;
+  text-shadow: 5px 5px 0 #888;
 }
 
 @keyframes bounce {

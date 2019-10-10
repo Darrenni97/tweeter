@@ -61,8 +61,10 @@ $(document).ready(function() {
     event.preventDefault()
     const data = $('form').serialize();
     if (!inputText) {
+      $('#count-error').slideUp();
       $('#empty-error').slideDown();
     } else if (inputText.length > 140) {
+      $('#empty-error').slideUp();
       $('#count-error').slideDown();
     } else {
       $.ajax({ 
