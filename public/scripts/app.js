@@ -61,9 +61,9 @@ $(document).ready(function() {
     event.preventDefault()
     const data = $('form').serialize();
     if (!inputText) {
-      $('#empty-error').removeClass('error').slideDown();
+      $('#empty-error').slideDown();
     } else if (inputText.length > 140) {
-      $('#count-error').removeClass('error').slideDown();
+      $('#count-error').slideDown();
     } else {
       $.ajax({ 
         url: '/tweets', 
@@ -73,8 +73,8 @@ $(document).ready(function() {
           postNewTweet();
         }
       })
-      $('#empty-error').addClass('error')
-      $('#count-error').addClass('error')
+      $('#empty-error').slideUp();
+      $('#count-error').slideUp();
     }
   })
 
