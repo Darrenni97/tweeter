@@ -74,7 +74,10 @@ $(document).ready(function() {
         }
       })
     }
+  })
 
+  $('#tweet-toggle').click(() => {
+    $('.new-tweet').toggle();
   })
 
 })
