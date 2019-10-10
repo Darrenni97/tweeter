@@ -15,10 +15,6 @@ main input {
   background-color: #4056A1;
   color: #FFFFFF;
 }
-
-#tweet-form{
-  display: none;
-}
  
 .error {
   display: none;

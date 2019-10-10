@@ -79,7 +79,7 @@ $(document).ready(function() {
   })
 
   $('#tweet-toggle').click(() => {
-    $('#tweet-form').toggle();
+    $('#tweet-form').slideToggle();
   })
 
 })
