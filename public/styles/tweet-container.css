@@ -68,3 +68,11 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+#tweet-icons {
+  display: none;
+}
+
+article:hover #tweet-icons {
+  display: flex;
+}

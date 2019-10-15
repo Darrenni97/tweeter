@@ -26,3 +26,7 @@ main input {
 .error > * {
   justify-content: center;
 }
+
+#tweet-form {
+  display: none;
+}

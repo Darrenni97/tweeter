@@ -83,7 +83,8 @@ $(document).ready(function() {
   })
 
   $('#tweet-toggle').click(() => {
-    $('#tweet-form').slideToggle();
+    $('#tweet-form').toggle();
+    $('textarea').focus();
   })
 
 })
