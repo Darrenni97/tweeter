@@ -73,6 +73,8 @@ $(document).ready(function() {
         data: data, 
         success: () => {
           postNewTweet();
+          $('textarea').val('');
+          $('.counter').text(140);
         }
       })
       $('#empty-error').slideUp();

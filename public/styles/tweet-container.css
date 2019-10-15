@@ -37,6 +37,7 @@ article {
   border: 4px solid #545149;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 10px;
+  word-wrap: break-word;
 }
 
 #tweet-text {
